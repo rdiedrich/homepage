@@ -18,6 +18,7 @@ defmodule HomepageWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/resume", ResumeController, :index
   end
 
   # Other scopes may use custom stacks.

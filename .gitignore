@@ -23,10 +23,14 @@ erl_crash.dump
 homepage-*.tar
 
 # Ignore assets that are produced by build tools.
+/priv/static/
 /priv/static/assets/
+
+/rel/
 
 # Ignore digested assets cache.
 /priv/static/cache_manifest.json
+
 
 # In case you use Node.js/npm, you want to ignore these.
 npm-debug.log

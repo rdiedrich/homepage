@@ -6,25 +6,15 @@
 
 /* Alerts and form errors used by phx.new */
 .alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  @apply rounded;
 }
-.alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+.alert-danger {
+  @apply bg-error text-error-content;
 }
 .alert-warning {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
-}
-.alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
 }
 .alert p {
   margin-bottom: 0;
@@ -33,7 +23,7 @@
   display: none;
 }
 .invalid-feedback {
-  color: #a94442;
+  @apply text-error;
   display: block;
   margin: -1rem 0 2rem;
 }
@@ -127,7 +117,7 @@
 */
 
 body {
-  @apply font-mono;
+  @apply font-sans;
 }
 
 #root {
@@ -139,4 +129,8 @@ body {
 
 #root > * {
   grid-column: 2;
+}
+
+.color-box {
+  @apply block w-8 h-8 m-1;
 }

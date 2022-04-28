@@ -12,7 +12,7 @@ config :homepage,
 
 # Configures the endpoint
 config :homepage, HomepageWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "www.rdiedri.ch"],
   render_errors: [view: HomepageWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Homepage.PubSub,
   live_view: [signing_salt: "Ws4ex2xq"]
