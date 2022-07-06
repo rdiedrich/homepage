@@ -4,6 +4,32 @@
 
 /* This file is for your main application CSS */
 
+/*
+  Layout
+*/
+
+body {
+  @apply font-sans;
+}
+
+#root {
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr min(1440px,100%) 1fr;
+}
+
+#root > * {
+  grid-column: 2;
+}
+
+.color-box {
+  @apply block w-8 h-8 m-1;
+}
+
+i.icon svg { @apply inline; }
+h2 > i.icon svg { @apply w-6 h-6 stroke-2; }
+
 /* Alerts and form errors used by phx.new */
 .alert {
   @apply rounded;
@@ -110,27 +136,4 @@
 @keyframes fade-out-keys{
   0% { opacity: 1; }
   100% { opacity: 0; }
-}
-
-/*
-  Layout
-*/
-
-body {
-  @apply font-sans;
-}
-
-#root {
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr min(1440px,100%) 1fr;
-}
-
-#root > * {
-  grid-column: 2;
-}
-
-.color-box {
-  @apply block w-8 h-8 m-1;
 }

@@ -1,10 +1,12 @@
 defmodule HomepageWeb.ResumeView do
   use HomepageWeb, :view
 
+  alias HomepageWeb.Icons
+
   def para(assigns) do
     ~H"""
     <div>
-        <h3 class="font-bold text-lg mb-0"><%= @heading %></h3>
+        <h3 class="font-semibold text-lg mb-0"><%= @heading %></h3>
         <%= if assigns[:subheading] do %>
             <h4 class="italic mb-2"><%= @subheading %></h4>
         <% end %>
@@ -18,7 +20,8 @@ defmodule HomepageWeb.ResumeView do
   def article(assigns) do
     ~H"""
     <article>
-        <h2 class="font-['Inter'] font-bold text-xl"><%= @heading %></h2>
+        <h2 class="font-['Inter'] font-semibold text-xl">
+          <%= @heading %></h2>
         <%= render_slot(@inner_block) %>
     </article>
     """
