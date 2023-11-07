@@ -19,21 +19,20 @@ defmodule HomepageWeb.ConnCase do
 
   using do
     quote do
+      # The default endpoint for testing
+      @endpoint HomepageWeb.Endpoint
+
+      use HomepageWeb, :verified_routes
+
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
       import HomepageWeb.ConnCase
-
-      alias HomepageWeb.Router.Helpers, as: Routes
-
-      # The default endpoint for testing
-      @endpoint HomepageWeb.Endpoint
     end
   end
 
   setup tags do
-    pid = Ecto.Adapters.SQL.Sandbox.start_owner!(Homepage.Repo, shared: not tags[:async])
-    on_exit(fn -> Ecto.Adapters.SQL.Sandbox.stop_owner(pid) end)
+    Homepage.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

@@ -17,14 +17,17 @@ config :homepage, Homepage.Repo,
 # you can enable the server option below.
 config :homepage, HomepageWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "4edrZ1YcleMolqOLMfLxvi8oxi6ZkRxoibuMugj9rW+zr/bGKi0N+hz8sD++zLc/",
+  secret_key_base: "s2QyAnSkP8WskaN/HwxLPGg3XQ8iJfUnpGDbQepVZ7zyre5ZObEAhUqT3cqX28bV",
   server: false
 
 # In test we don't send emails.
 config :homepage, Homepage.Mailer, adapter: Swoosh.Adapters.Test
 
+# Disable swoosh api client as it is only required for production adapters.
+config :swoosh, :api_client, false
+
 # Print only warnings and errors during test
-config :logger, level: :warn
+config :logger, level: :warning
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime

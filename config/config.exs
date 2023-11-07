@@ -11,11 +11,16 @@ config :homepage,
   ecto_repos: [Homepage.Repo]
 
 # Configures the endpoint
+host = System.get_env("PHX_HOST") || "localhost"
 config :homepage, HomepageWeb.Endpoint,
-  url: [host: "www.rdiedri.ch"],
-  render_errors: [view: HomepageWeb.ErrorView, accepts: ~w(html json), layout: false],
+  adapter: Bandit.PhoenixAdapter,
+  url: [host: host],
+  render_errors: [
+    formats: [html: HomepageWeb.ErrorHTML, json: HomepageWeb.ErrorJSON],
+    layout: false
+  ],
   pubsub_server: Homepage.PubSub,
-  live_view: [signing_salt: "Ws4ex2xq"]
+  live_view: [signing_salt: "7d3vC+0c"]
 
 # Configures the mailer
 #
@@ -26,12 +31,9 @@ config :homepage, HomepageWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :homepage, Homepage.Mailer, adapter: Swoosh.Adapters.Local
 
-# Swoosh API client is needed for adapters other than SMTP.
-config :swoosh, :api_client, false
-
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.14.0",
+  version: "0.17.11",
   default: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
@@ -39,14 +41,17 @@ config :esbuild,
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
-config :tailwind, version: "3.0.24", default: [
-  args: ~w(
-    --config=tailwind.config.js
-    --input=css/app.css
-    --output=../priv/static/assets/app.css
-  ),
-  cd: Path.expand("../assets", __DIR__)
-]
+# Configure tailwind (the version is required)
+config :tailwind,
+  version: "3.2.7",
+  default: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/app.css
+      --output=../priv/static/assets/app.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,

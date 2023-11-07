@@ -2,138 +2,45 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* This file is for your main application CSS */
+@font-face {
+  font-family: 'Inter var';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
+  font-named-instance: 'Regular';
+}
 
-/*
-  Layout
-*/
+@font-face {
+  font-family: 'Inter var';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
+  font-named-instance: 'Italic';
+}
+
+html { @apply bg-white; }
 
 body {
-  @apply font-sans;
+  @apply font-sans text-black-olive;
+  @apply grid grid-rows-[min-content_1fr_min-content];
 }
 
-#root {
-  margin: 0 auto;
+section p { @apply mb-4; }
+strong { @apply font-semibold; }
 
-  display: grid;
-  grid-template-columns: 1fr min(1440px,100%) 1fr;
-}
+.dropdown .btn { @apply normal-case text-base; }
+header { @apply flex justify-end; }
 
-#root > * {
-  grid-column: 2;
-}
+header h1 { @apply font-normal text-lg m-2; }
 
-.color-box {
-  @apply block w-8 h-8 m-1;
+section h2 {
+  @apply font-bold text-4xl;
+  @apply mb-8;
 }
 
-i.icon svg { @apply inline; }
-h2 > i.icon svg { @apply w-6 h-6 stroke-2; }
+.projects h3 { @apply font-semibold text-lg; }
+.project { @apply mb-4; }
 
-/* Alerts and form errors used by phx.new */
-.alert {
-  @apply rounded;
-}
-.alert-danger {
-  @apply bg-error text-error-content;
-}
-.alert-warning {
-  color: #8a6d3b;
-  background-color: #fcf8e3;
-  border-color: #faebcc;
-}
-.alert p {
-  margin-bottom: 0;
-}
-.alert:empty {
-  display: none;
-}
-.invalid-feedback {
-  @apply text-error;
-  display: block;
-  margin: -1rem 0 2rem;
-}
-
-/* LiveView specific classes for your customization */
-.phx-no-feedback.invalid-feedback,
-.phx-no-feedback .invalid-feedback {
-  display: none;
-}
-
-.phx-click-loading {
-  opacity: 0.5;
-  transition: opacity 1s ease-out;
-}
-
-.phx-loading{
-  cursor: wait;
-}
-
-.phx-modal {
-  opacity: 1!important;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.phx-modal-content {
-  background-color: #fefefe;
-  margin: 15vh auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.phx-modal-close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.phx-modal-close:hover,
-.phx-modal-close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.fade-in-scale {
-  animation: 0.2s ease-in 0s normal forwards 1 fade-in-scale-keys;
-}
-
-.fade-out-scale {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-out-scale-keys;
-}
-
-.fade-in {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-in-keys;
-}
-.fade-out {
-  animation: 0.2s ease-out 0s normal forwards 1 fade-out-keys;
-}
-
-@keyframes fade-in-scale-keys{
-  0% { scale: 0.95; opacity: 0; }
-  100% { scale: 1.0; opacity: 1; }
-}
-
-@keyframes fade-out-scale-keys{
-  0% { scale: 1.0; opacity: 1; }
-  100% { scale: 0.95; opacity: 0; }
-}
-
-@keyframes fade-in-keys{
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fade-out-keys{
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
+.icon-link { @apply flex items-start gap-1; }

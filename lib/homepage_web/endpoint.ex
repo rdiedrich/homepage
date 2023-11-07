@@ -7,7 +7,8 @@ defmodule HomepageWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_homepage_key",
-    signing_salt: "HBldD12f"
+    signing_salt: "gxQ6oTQt",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -19,8 +20,10 @@ defmodule HomepageWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :homepage,
-    gzip: false,
-    only: ~w(assets fonts images favicon.ico robots.txt)
+    headers: [{"access-control-allow-origin", "*"}],
+    gzip: true,
+    only_matching: HomepageWeb.static_digested(),
+    only: HomepageWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
