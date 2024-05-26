@@ -88,4 +88,8 @@ COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/homepage ./
 
 USER nobody
 
-CMD ["sh", "-c", "/app/bin/migrate && /app/bin/server"]
+# with migrations (doesnt work if no migrations exist)
+#CMD ["sh", "-c", "/app/bin/migrate && /app/bin/server"]
+
+# without migrations
+CMD ["/app/bin/server"]
