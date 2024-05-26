@@ -1,7 +1,7 @@
 defmodule HomepageWeb.PageHTML do
   use HomepageWeb, :html
   import HomepageWeb.HelperComponents
-  
+
   embed_templates "page_html/*"
 
   attr :url, :string, required: true
