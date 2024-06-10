@@ -1,26 +1,24 @@
 <header class="px-4 sm:px-6 lg:px-8">
-  <.dropdown>
-     <:label>@rdiedrich</:label>
-    <:entry>
-      <.link 
-        title="send an e-mail" 
-        href="mailto:hallo@rdiedri.ch">
-        <.icon name="hero-envelope" />
-        hallo@rdiedri.ch
-      </.link>
-    </:entry>
+  <div class="navbar">
+    <.dropdown>
+      <:label>@rdiedrich</:label>
+      <:entry>
+        <.link title="send an e-mail" href="mailto:hallo@rdiedri.ch">
+          <.icon name="hero-envelope" /> hallo@rdiedri.ch
+        </.link>
+      </:entry>
 
-    <:entry>
-      <.link 
-        title="chat with me on matrix"
-        href="https://matrix.to/#/@rdiedrich:matrix.org"
-        target="_blank">
-        <.icon name="hero-chat-bubble-bottom-center-text" />
-        @rdiedrich:matrix.org
-      </.link>
-    </:entry>
-  
-</.dropdown>
+      <:entry>
+        <.link
+          title="chat with me on matrix"
+          href="https://matrix.to/#/@rdiedrich:matrix.org"
+          target="_blank"
+        >
+          <.icon name="hero-chat-bubble-bottom-center-text" /> @rdiedrich:matrix.org
+        </.link>
+      </:entry>
+    </.dropdown>
+  </div>
 </header>
 <main class="px-4 py-20 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-2xl space-y-16">
@@ -28,5 +26,4 @@
     <%= @inner_content %>
   </div>
 </main>
-<footer>
-</footer>
+<footer></footer>

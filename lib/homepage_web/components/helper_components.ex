@@ -3,29 +3,29 @@ defmodule HomepageWeb.HelperComponents do
 
   slot :label, required: true
   slot :entry, default: []
+
   def dropdown(assigns) do
     ~H"""
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost m-1">
         <%= render_slot(@label) %>
       </label>
-      <ul tabindex="0" 
-        class="dropdown-content menu p-2 shadow rounded-box">
+      <ul tabindex="0" class="dropdown-content bg-white menu p-2 shadow rounded-box">
         <li :for={ent <- @entry}>
           <%= render_slot(ent) %>
         </li>
       </ul>
     </div>
-    """ 
+    """
   end
 
   slot :inner_block, required: true
+
   def markdown(assigns) do
     ~H"""
     <%= render_slot(@inner_block)
-        |> slot_markdown_as_html()
-        |> raw()
-    %>
+    |> slot_markdown_as_html()
+    |> raw() %>
     """
   end
 
@@ -33,12 +33,12 @@ defmodule HomepageWeb.HelperComponents do
     [slot] = dynamic_slot.(false)
     slot |> slot_markdown_as_html()
   end
-  
+
   defp slot_markdown_as_html(rendered_slot) do
-    %{static: [markdown]} = rendered_slot 
+    %{static: [markdown]} = rendered_slot
 
     trim_leading_space(markdown)
-    |> String.replace(~S("\""), ~S("""), global: true)    
+    |> String.replace(~S("\""), ~S("""), global: true)
     |> Earmark.as_html!(compact_output: true)
   end
 
