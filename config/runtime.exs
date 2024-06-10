@@ -49,7 +49,7 @@ if config_env() == :prod do
       """
 
   host = System.get_env("PHX_HOST") || "example.com"
-  cdn = System.get_env("PHX_CDN") || "cdn.example.com"
+  cdn = System.get_env("PHX_CDN") || host
   port = String.to_integer(System.get_env("PORT") || "4000")
 
   config :homepage, HomepageWeb.Endpoint,
