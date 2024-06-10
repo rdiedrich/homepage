@@ -7,15 +7,32 @@
     <.live_title suffix="">
       <%= assigns[:page_title] || "Homepage" %>
     </.live_title>
-    <link rel="apple-touch-icon" sizes="180x180" 
-      href={static_path(@conn, ~p"/apple-touch-icon.png")}>
-    <link rel="icon" type="image/png" sizes="32x32" 
-      href={static_path(@conn, ~p"/favicon-32x32.png")}>
-    <link phx-track-static rel="icon" type="image/png" sizes="16x16" 
-      href={static_path(@conn, ~p"/favicon-16x16.png")}>
-    <link rel="manifest" href="/site.webmanifest">    
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href={static_path(@conn, ~p"/apple-touch-icon.png")}
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href={static_path(@conn, ~p"/favicon-32x32.png")}
+    />
+    <link
+      phx-track-static
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href={static_path(@conn, ~p"/favicon-16x16.png")}
+    />
+    <link rel="manifest" href="/site.webmanifest" />
     <link phx-track-static rel="stylesheet" href={static_url(@conn, ~p"/assets/app.css")} />
-    <script defer phx-track-static type="text/javascript" src={static_url(@conn, ~p"/assets/app.js")}>
+    <script
+      defer
+      phx-track-static
+      type="text/javascript"
+      src={static_url(@conn, ~p"/assets/app.js")}
+    >
     </script>
   </head>
   <body class="bg-white antialiased">

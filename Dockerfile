@@ -67,7 +67,8 @@ RUN mix release
 # the compiled release and other runtime necessities
 FROM ${RUNNER_IMAGE}
 
-RUN apt-get update -y && apt-get install -y libstdc++6 openssl libncurses5 locales \
+RUN apt-get update -y && \
+  apt-get install -y libstdc++6 openssl libncurses5 locales ca-certificates \
   && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # Set the locale
@@ -88,8 +89,9 @@ COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/homepage ./
 
 USER nobody
 
-# with migrations (doesnt work if no migrations exist)
-#CMD ["sh", "-c", "/app/bin/migrate && /app/bin/server"]
+# If using an environment that doesn't automatically reap zombie processes, it is
+# advised to add an init process such as tini via `apt-get install`
+# above and adding an entrypoint. See https://github.com/krallin/tini for details
+# ENTRYPOINT ["/tini", "--"]
 
-# without migrations
 CMD ["/app/bin/server"]
