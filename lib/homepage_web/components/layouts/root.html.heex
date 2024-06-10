@@ -26,6 +26,14 @@
       href={static_path(@conn, ~p"/favicon-16x16.png")}
     />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <style>
+      :root { font-family: 'Inter', sans-serif; }
+      @supports (font-variation-settings: normal) {
+        :root { font-family: 'Inter var', sans-serif; }
+      		
+    </style>
     <link phx-track-static rel="stylesheet" href={static_url(@conn, ~p"/assets/app.css")} />
     <script
       defer

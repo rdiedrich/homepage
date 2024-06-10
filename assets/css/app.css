@@ -2,24 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@font-face {
-  font-family: 'Inter var';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/Inter-roman.var.woff2?v=3.19') format('woff2');
-  font-named-instance: 'Regular';
-}
-
-@font-face {
-  font-family: 'Inter var';
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/Inter-italic.var.woff2?v=3.19') format('woff2');
-  font-named-instance: 'Italic';
-}
-
 html { @apply bg-white; }
 
 body {
@@ -27,13 +9,17 @@ body {
   @apply grid grid-rows-[min-content_1fr_min-content];
 }
 
+header .navbar { @apply absolute w-full pr-10 flex justify-end; }
+
 section p { @apply mb-4; }
 strong { @apply font-semibold; }
 
-.dropdown .btn { @apply normal-case text-base; }
-header { @apply flex justify-end; }
+em { @apply font-semibold not-italic; }
 
-header h1 { @apply font-normal text-lg m-2; }
+ul { @apply pl-4; }
+li { list-style-type: '- '; }
+
+.dropdown .btn { @apply normal-case text-base; }
 
 section h2 {
   @apply font-bold text-4xl;
