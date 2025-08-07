@@ -2,31 +2,136 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-html { @apply bg-white; }
+/* Custom gradient background */
+html { 
+  @apply bg-gradient-to-br from-honeydew via-white to-blue-50;
+  min-height: 100vh;
+}
 
 body {
   @apply font-sans text-black-olive;
   @apply grid grid-rows-[min-content_1fr_min-content];
+  @apply leading-relaxed;
 }
 
-header .navbar { @apply absolute w-full pr-10 flex justify-end; }
+header .navbar { 
+  @apply absolute w-full pr-10 flex justify-end z-10;
+  @apply backdrop-blur-sm;
+}
 
-section p { @apply mb-4; }
-strong { @apply font-semibold; }
+/* Enhanced main layout */
+main {
+  @apply relative;
+}
 
-em { @apply font-semibold not-italic; }
+/* Section styling */
+section {
+  @apply relative;
+}
+
+section p { @apply mb-4 text-lg; }
+strong { @apply font-semibold text-indigo; }
+
+em { @apply font-semibold not-italic text-red-crayola; }
 
 ul { @apply pl-4; }
 li { list-style-type: '- '; }
 
 .dropdown .btn { @apply normal-case text-base; }
 
+/* Enhanced section headers */
 section h2 {
-  @apply font-bold text-4xl;
-  @apply mb-8;
+  @apply font-bold text-4xl md:text-5xl;
+  @apply mb-12;
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-indigo via-red-crayola to-indigo;
+  @apply relative;
 }
 
-.projects h3 { @apply font-semibold text-lg; }
-.project { @apply mb-4; }
+section h2::after {
+  content: '';
+  @apply absolute -bottom-4 left-0 w-12 h-1;
+  @apply bg-gradient-to-r from-indigo to-red-crayola;
+  @apply rounded-full;
+}
 
-.icon-link { @apply flex items-start gap-1; }
+/* About section styling */
+.about {
+  @apply mb-20;
+}
+
+.about .markdown {
+  @apply text-xl leading-relaxed;
+  @apply max-w-none;
+}
+
+/* Enhanced projects section */
+.projects {
+  @apply space-y-8;
+}
+
+.projects h3 { 
+  @apply font-bold text-xl mb-3;
+  @apply text-indigo;
+  @apply transition-colors duration-300;
+}
+
+/* Beautiful project cards */
+.project { 
+  @apply group;
+  @apply bg-white/70 backdrop-blur-sm;
+  @apply rounded-2xl p-6;
+  @apply border border-white/50;
+  @apply shadow-lg shadow-indigo/10;
+  @apply transition-all duration-300 ease-out;
+  @apply hover:shadow-2xl hover:shadow-indigo/20;
+  @apply hover:scale-[1.02];
+  @apply hover:bg-white/90;
+  @apply mb-6;
+}
+
+.project:hover h3 {
+  @apply text-red-crayola;
+}
+
+.project .desc {
+  @apply mb-4 text-black-olive/80;
+  @apply leading-relaxed;
+}
+
+.project .links {
+  @apply flex gap-4 mt-4;
+}
+
+.icon-link { 
+  @apply flex items-center gap-2;
+  @apply text-indigo hover:text-red-crayola;
+  @apply transition-colors duration-300;
+  @apply font-medium;
+  @apply hover:underline underline-offset-4;
+}
+
+.icon-link .hero {
+  @apply w-4 h-4;
+  @apply transition-transform duration-300;
+}
+
+.icon-link:hover .hero {
+  @apply scale-110;
+}
+
+/* Add some visual flair */
+.about::before {
+  content: '';
+  @apply absolute -top-10 -left-10 w-32 h-32;
+  @apply bg-gradient-to-br from-sunglow/30 to-transparent;
+  @apply rounded-full blur-3xl;
+  @apply pointer-events-none;
+}
+
+.projects::before {
+  content: '';
+  @apply absolute -top-20 -right-20 w-40 h-40;
+  @apply bg-gradient-to-bl from-red-crayola/20 to-transparent;
+  @apply rounded-full blur-3xl;
+  @apply pointer-events-none;
+}

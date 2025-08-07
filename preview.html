@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Preview - Rüdiger Diedrich</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'indigo': '#540D6E',
+                        'red-crayola': '#ee4266',
+                        'sunglow': '#ffd23f',
+                        'honeydew': '#f3fcf0',
+                        'black-olive': '#1f271b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter var', 'sans-serif']
+                    }
+                }
+            },
+            daisyui: {
+                themes: [{
+                    mytheme: {
+                        "primary": "#540D6E",
+                        "secondary": "#ee4266",
+                        "accent": "#ffd23f",
+                        "neutral": "#1f271b",
+                        "base-100": "#fff",
+                        "info": "#79D3E7",
+                        "success": "#20BC5E",
+                        "warning": "#E79127",
+                        "error": "#F6282B",
+                    }
+                }]
+            }
+        }
+    </script>
+    <style>
+        :root { font-family: 'Inter', sans-serif; }
+        @supports (font-variation-settings: normal) {
+            :root { font-family: 'Inter var', sans-serif; }
+        }
+        
+        /* Custom styles from our enhanced app.css */
+        .hero-icon {
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 3rem;
+            height: 0.25rem;
+            background: linear-gradient(to right, #540D6E, #ee4266);
+            border-radius: 9999px;
+        }
+        
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, #f3fcf0 0%, #ffffff 50%, #eff6ff 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, #540D6E, #ee4266, #540D6E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .glow-orb-1::before {
+            content: '';
+            position: absolute;
+            top: -2.5rem;
+            left: -2.5rem;
+            width: 8rem;
+            height: 8rem;
+            background: linear-gradient(135deg, rgba(255, 210, 63, 0.3), transparent);
+            border-radius: 50%;
+            filter: blur(3rem);
+            pointer-events: none;
+        }
+        
+        .glow-orb-2::before {
+            content: '';
+            position: absolute;
+            top: -5rem;
+            right: -5rem;
+            width: 10rem;
+            height: 10rem;
+            background: linear-gradient(225deg, rgba(238, 66, 102, 0.2), transparent);
+            border-radius: 50%;
+            filter: blur(3rem);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gradient-custom min-h-screen font-sans text-black-olive leading-relaxed antialiased">
+    <!-- Header -->
+    <header class="px-4 sm:px-6 lg:px-8">
+        <div class="absolute w-full pr-10 flex justify-end z-10 backdrop-blur-sm">
+            <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost m-1 text-indigo font-semibold hover:text-red-crayola transition-colors duration-300 normal-case text-base">
+                    @rdiedrich
+                </label>
+                <ul tabindex="0" class="dropdown-content bg-white menu p-2 shadow-lg rounded-box">
+                    <li>
+                        <a href="mailto:hallo@rdiedri.ch" class="hover:bg-indigo/5 rounded-lg px-2 py-1 transition-colors duration-300">
+                            <svg class="hero-icon text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            hallo@rdiedri.ch
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://matrix.to/#/@rdiedrich:matrix.org" target="_blank" class="hover:bg-indigo/5 rounded-lg px-2 py-1 transition-colors duration-300">
+                            <svg class="hero-icon text-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            @rdiedrich:matrix.org
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-4 py-20 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl space-y-20">
+            <!-- About Section -->
+            <section class="about relative mb-20 glow-orb-1">
+                <h2 class="section-title font-bold text-4xl md:text-5xl mb-12 text-gradient relative">
+                    about
+                </h2>
+                <div class="text-xl leading-relaxed max-w-none">
+                    <p class="mb-4 text-lg">
+                        Hi, my name is <strong class="font-semibold text-indigo">Rüdiger Diedrich</strong> and this is my homepage.
+                    </p>
+                    <p class="mb-4 text-lg">
+                        I'm a <em class="font-semibold not-italic text-red-crayola">passionate developer</em> who loves creating <strong class="font-semibold text-indigo">beautiful</strong> and <strong class="font-semibold text-indigo">functional</strong> web experiences.
+                    </p>
+                    <p class="mb-4 text-lg">
+                        Check out some of the projects I've been working on below.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects space-y-8 relative glow-orb-2">
+                <h2 class="section-title font-bold text-4xl md:text-5xl mb-12 text-gradient relative">
+                    projects
+                </h2>
+                <div class="grid gap-6">
+                    <!-- Project 1 -->
+                    <div class="project group glass-effect rounded-2xl p-6 border border-white/50 shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 mb-6">
+                        <a href="https://chicken.rdiedri.ch" target="_blank">
+                            <h3 class="font-bold text-xl mb-3 text-indigo transition-colors duration-300 group-hover:text-red-crayola">
+                                Exponential Chicken Egg
+                            </h3>
+                        </a>
+                        <div class="mb-4 text-black-olive/80 leading-relaxed">
+                            <p class="mb-4 text-lg">
+                                The chicken is very busy. 100% implemented in <strong class="font-semibold text-indigo">Phoenix Liveview</strong>. Press spacebar (or tap) for fun.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://chicken.rdiedri.ch" target="_blank" class="flex items-center gap-2 text-indigo hover:text-red-crayola transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                                <svg class="hero-icon transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Visit website
+                            </a>
+                            <a href="https://forge.rdiedri.ch/rdiedrich/exponential-chicken-egg" target="_blank" class="flex items-center gap-2 text-indigo hover:text-red-crayola transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                                <svg class="hero-icon transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                                See the code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project group glass-effect rounded-2xl p-6 border border-white/50 shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 mb-6">
+                        <a href="https://app.rdiedri.ch" target="_blank">
+                            <h3 class="font-bold text-xl mb-3 text-indigo transition-colors duration-300 group-hover:text-red-crayola">
+                                Physics
+                            </h3>
+                        </a>
+                        <div class="mb-4 text-black-olive/80 leading-relaxed">
+                            <p class="mb-4 text-lg">
+                                Random falling blocks under the yoke of gravity. <strong class="font-semibold text-indigo">Typescript</strong> using the <em class="font-semibold not-italic text-red-crayola">pixi engine</em>. Click or tap a block to give it a boost.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://app.rdiedri.ch" target="_blank" class="flex items-center gap-2 text-indigo hover:text-red-crayola transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                                <svg class="hero-icon transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Visit website
+                            </a>
+                            <a href="https://forge.rdiedri.ch/rdiedrich/physics" target="_blank" class="flex items-center gap-2 text-indigo hover:text-red-crayola transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                                <svg class="hero-icon transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                                See the code
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project group glass-effect rounded-2xl p-6 border border-white/50 shadow-lg transition-all duration-300 ease-out hover:shadow-2xl hover:scale-[1.02] hover:bg-white/90 mb-6">
+                        <a href="https://colorer.vercel.app" target="_blank">
+                            <h3 class="font-bold text-xl mb-3 text-indigo transition-colors duration-300 group-hover:text-red-crayola">
+                                Colorer
+                            </h3>
+                        </a>
+                        <div class="mb-4 text-black-olive/80 leading-relaxed">
+                            <p class="mb-4 text-lg">
+                                Play around with HSLA color. Reactive app show-casing <strong class="font-semibold text-indigo">SolidJS</strong>, deployed on <em class="font-semibold not-italic text-red-crayola">vercel</em>.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 mt-4">
+                            <a href="https://colorer.vercel.app" target="_blank" class="flex items-center gap-2 text-indigo hover:text-red-crayola transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                                <svg class="hero-icon transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                                Visit website
+                            </a>
+                            <a href="https://forge.rdiedri.ch/rdiedrich/colorer" target="_blank" class="flex items-center gap-2 text-indigo hover:text-red-crayola transition-colors duration-300 font-medium hover:underline underline-offset-4">
+                                <svg class="hero-icon transition-transform duration-300 hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                                See the code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
